@@ -1,0 +1,21 @@
+{
+	"name": "HelpDock",
+	"description": "A Chrome extension for DAP",
+	"author": "Sai Uttarkar",
+	"version": "1.0",
+	"manifest_version": 3,
+	"background": {
+		"service_worker": "background.js"
+	},
+	"permissions": ["storage", "activeTab", "scripting", "nativeMessaging"],
+	"action": {
+		"default_popup": "popup.html"
+	},
+	"content_scripts": [
+		{
+			"matches": ["*://*.medium.com/*"],
+			"js": ["contentScript.js"],
+			"all_frames": true
+		}
+	]
+}

@@ -1,21 +1,25 @@
 {
-	"name": "DAP Extension",
-	"description": "A Chrome extension for DAP",
+	"name": "Lab",
+	"description": "Lab Version of the DAP Chrome Extension",
 	"author": "Sai Uttarkar",
 	"version": "1.0",
 	"manifest_version": 3,
 	"background": {
 		"service_worker": "background.js"
 	},
-	"permissions": ["storage", "activeTab", "scripting", "nativeMessaging"],
-	"action": {
-		"default_popup": "popup.html"
-	},
+	"permissions": [
+		"storage",
+		"activeTab",
+		"scripting",
+		"nativeMessaging",
+		"tabs"
+	],
 	"content_scripts": [
 		{
 			"matches": ["*://*.medium.com/*"],
 			"js": ["contentScript.js"],
 			"all_frames": true
 		}
-	]
+	],
+	"action": {}
 }
